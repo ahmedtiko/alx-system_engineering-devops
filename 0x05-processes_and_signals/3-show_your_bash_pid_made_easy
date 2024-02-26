@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
-# displays the PID, along with the process name, of
-# processes whose name contain the word bash
 
-pgrep bash -l
+# Get the PID of the current script
+script_pid=$$
+
+# Get the list of processes from the /proc directory
+for pid_dir in /proc/[0-9]*/; do
+    pid=${pid_dir:6:-1}  # Extract PID from the directory path
+
+    # Check if the cmdline file exists and is readable
+    if [[ -r "$pid_dir/cmdline" ]]; then
+        # Read the command line of the process
+        cmdline=$(tr -d '\0' < "$pid_dir/cmdline")
+        
+        # Check if the command line contains "bash"
+        if [[ "$cmdline" == *"bash"* ]]; then
+            echo "$pid bash"
+            echo "$script_pid $0"  # Display the PID and name of this script
+        fi
+    fi
+done
