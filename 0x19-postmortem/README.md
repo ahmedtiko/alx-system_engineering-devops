@@ -1,7 +1,3 @@
-Sure, here is the postmortem content formatted for a `README.md` file:
-
----
-
 # Postmortem: The Great Outage of June 2024
 
 ## Issue Summary
@@ -49,9 +45,8 @@ Upon identifying the misconfiguration, the team immediately rolled back the load
 **Conclusion:**
 Despite the initial chaos, the outage served as a valuable learning experience. By tightening our processes and improving our systems, we aim to prevent similar incidents in the future. And remember, always double-check your configs—especially before hitting save!
 
-![Load Balancer Diagram](https://example.com/diagram.png)
+![Load Balancer Diagram](https://avinetworks.com/wp-content/uploads/2017/04/load-balancer-with-software-load-balancer-hardware-load-balancer-diagram.png)
 
 **Note:** The diagram above illustrates the correct traffic distribution post-rollback.
 
-**Thank you for reading! Stay vigilant and happy debugging!**
-
+**Thank you for reading! Stay vigilant and happy debugging!
